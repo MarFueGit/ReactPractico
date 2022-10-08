@@ -15,6 +15,7 @@ module.exports = {
 		alias: {
 			'@components': path.resolve(__dirname, 'src/components/'),
 			'@containers': path.resolve(__dirname, 'src/containers/'),
+			'@pages': path.resolve(__dirname, 'src/pages/'),
 			'@styles': path.resolve(__dirname, 'src/styles/'),
 			'@icons': path.resolve(__dirname, 'src/assets/icons/'),
 			'@logos': path.resolve(__dirname, 'src/assets/logos/'),
@@ -55,22 +56,15 @@ module.exports = {
 	plugins: [
 		new HtmlWebpackPlugin({
 			template: './public/index.html',
-			filename: './index.html'
+			filename: './index.html'	
 		}),
 		new MiniCssExtractPlugin({
 			filename: '[name].css'
 		}),
 	],
-	devServer:{
-		static: {
-			directory:
-			path.join(__dirname, 'public'),
-		},
-		compress: true,
-		port: 3005,
-	},
+	
 	devServer: {
-       historyApiFallback: true,
+    historyApiFallback: true,
 	}
 }
 
